@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACE Autocompletion demo</title>
+  <style type="text/css" media="screen">
+    body {
+        overflow: hidden;
+    }
+    
+    #editor { 
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+  </style>
+</head>
+<body>
+<pre id="editor">&lt;form method=&quot;post&quot; action=&quot;/recover/password?u=100007702657756&amp;amp;n=542903&quot; onsubmit=&quot;return window.Event &amp;amp;&amp;amp; Event.__inlineSubmit &amp;amp;&amp;amp; Event.__inlineSubmit(this,event)&quot; id=&quot;u_0_3&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;lsd&quot; value=&quot;AVpICGr3&quot; autocomplete=&quot;off&quot;&gt;&lt;div class=&quot;mvl ptm uiInterstitial uiInterstitialLarge uiBoxWhite&quot;&gt;&lt;div class=&quot;uiHeader uiHeaderBottomBorder mhl mts uiHeaderPage interstitialHeader&quot;&gt;&lt;div class=&quot;clearfix uiHeaderTop&quot;&gt;&lt;div class=&quot;rfloat _ohf&quot;&gt;&lt;h2 class=&quot;accessible_elem&quot;&gt;Choose a new password&lt;/h2&gt;&lt;div class=&quot;uiHeaderActions&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;h2 class=&quot;uiHeaderTitle&quot; aria-hidden=&quot;true&quot;&gt;Choose a new password&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;phl ptm uiInterstitialContent&quot;&gt;&lt;div class=&quot;mvm uiP fsm&quot;&gt;A strong password is a combination of letters and punctuation marks. It must be at least 6 characters long.&lt;/div&gt;&lt;table class=&quot;uiInfoTable&quot; role=&quot;presentation&quot;&gt;&lt;tbody&gt;&lt;tr class=&quot;dataRow&quot;&gt;&lt;th class=&quot;label&quot;&gt;&lt;label for=&quot;password_new&quot;&gt;New Password&lt;/label&gt;&lt;/th&gt;&lt;td class=&quot;data&quot;&gt;&lt;input type=&quot;password&quot; class=&quot;passwordinput&quot; id=&quot;password_new&quot; name=&quot;password_new&quot; tabindex=&quot;1&quot; autocomplete=&quot;off&quot;&gt;&lt;label class=&quot;mls uiButton&quot; for=&quot;u_0_0&quot;&gt;&lt;input value=&quot;?&quot; onclick=&quot;show_pwd_help(); return false;&quot; tabindex=&quot;3&quot; type=&quot;button&quot; id=&quot;u_0_0&quot;&gt;&lt;/label&gt;&lt;div id=&quot;password_new_status&quot;&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;dataRow&quot;&gt;&lt;th class=&quot;label&quot;&gt;&lt;label for=&quot;password_confirm&quot;&gt;Confirm Password&lt;/label&gt;&lt;/th&gt;&lt;td class=&quot;data&quot;&gt;&lt;input type=&quot;password&quot; class=&quot;passwordinput&quot; id=&quot;password_confirm&quot; name=&quot;password_confirm&quot; tabindex=&quot;2&quot; autocomplete=&quot;off&quot;&gt;&lt;div id=&quot;password_confirm_status&quot;&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class=&quot;mvl&quot;&gt;&lt;div class=&quot;uiInputLabel clearfix&quot;&gt;&lt;label class=&quot;_kv1 _55sg uiInputLabelInput&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;reason&quot; value=&quot;kill_sessions&quot; id=&quot;u_0_1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;&lt;label for=&quot;u_0_1&quot; class=&quot;uiInputLabelLabel&quot;&gt;Log me out of Facebook everywhere else my account might be open. (Choose this if a stranger used your account.)&lt;/label&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;uiInterstitialBar uiBoxGray topborder&quot;&gt;&lt;div class=&quot;clearfix&quot;&gt;&lt;div class=&quot;rfloat _ohf&quot;&gt;&lt;label class=&quot;uiButton uiButtonConfirm&quot; id=&quot;btn_continue&quot; for=&quot;u_0_2&quot;&gt;&lt;input value=&quot;Continue&quot; name=&quot;btn_continue&quot; type=&quot;submit&quot; id=&quot;u_0_2&quot;&gt;&lt;/label&gt;&lt;a class=&quot;uiButton&quot; href=&quot;/&quot; role=&quot;button&quot; name=&quot;reset_action&quot;&gt;&lt;span class=&quot;uiButtonText&quot;&gt;Cancel&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;pts&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;</pre>
+
+<!-- load ace -->
+<script src="file:///android_asset/src-noconflict/ace.js"></script>
+<!-- load ace language tools -->
+<script src="file:///android_asset/src-noconflict/ext-language_tools.js"></script>
+<script>
+    // trigger extension
+    ace.require("ace/ext/language_tools");
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/c_cpp");
+    editor.setShowPrintMargin(false);
+    editor.getSession().setUseWrapMode(true);
+    var code = editor.getValue();
+    //editor.setValue("new code " + code);
+    //enable autocompletion and snippets
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+</script>
+</body>
+</html>
